@@ -1,0 +1,2965 @@
+Copy the prompt below into the chat box and send it.
+You are an experienced Java developer.
+
+Develop a simple Java billing application for a retail store named SmartStore.
+The class must be named BillingApplication in package com.smartstore.billing.
+
+Requirements:
+Accept customer name, product name, product price and quantity.
+Calculate the total purchase amount (price x quantity).
+Apply a 5% discount if the purchase amount is between Rs. 1,000 and Rs. 4,999.
+Apply a 10% discount if the purchase amount is Rs. 5,000 or above.
+No discount below Rs. 1,000.
+Display customer details, total amount, discount percentage, discount amount
+and final amount, with amounts shown to 2 decimal places.
+
+Constraints:
+Use Java fundamentals only: variables, data types, if-else and arithmetic operators.
+Use Scanner for user input.
+Do not use advanced Java features.
+Write readable, beginner-friendly code.
+Include comments explaining important logic.
+
+Generate a complete executable Java program with a main() method.
+
+Below is the complete Java program for BillingApplication in the com.smartstore.billing package:
+package com.smartstore.billing;
+
+import java.util.Scanner;
+
+public class BillingApplication {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Accept customer and purchase details
+        System.out.print("Enter customer name: ");
+        String customerName = scanner.nextLine();
+
+        System.out.print("Enter product name: ");
+        String productName = scanner.nextLine();
+
+        System.out.print("Enter product price: ");
+        double productPrice = scanner.nextDouble();
+
+        System.out.print("Enter quantity: ");
+        int quantity = scanner.nextInt();
+
+        // Calculate the total purchase amount
+        double totalAmount = productPrice * quantity;
+
+        // Calculate discount according to the purchase amount
+        double discountPercentage = 0.0;
+
+        if (totalAmount >= 1000 && totalAmount < 5000) {
+            discountPercentage = 5.0;
+        } else if (totalAmount >= 5000) {
+            discountPercentage = 10.0;
+        }
+
+        double discountAmount = totalAmount * discountPercentage / 100;
+        double finalAmount = totalAmount - discountAmount;
+
+        // Display billing details
+        System.out.println("\n===== SmartStore Billing Details =====");
+        System.out.println("Customer Name: " + customerName);
+        System.out.println("Product Name: " + productName);
+        System.out.printf("Total Amount: Rs. %.2f%n", totalAmount);
+        System.out.printf("Discount Percentage: %.2f%%%n", discountPercentage);
+        System.out.printf("Discount Amount: Rs. %.2f%n", discountAmount);
+        System.out.printf("Final Amount: Rs. %.2f%n", finalAmount);
+
+        scanner.close();
+    }
+}
+package com.smartstore.billing;
+
+import java.util.Scanner;
+
+public class BillingApplication {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Accept customer and purchase details
+        System.out.print("Enter customer name: ");
+        String customerName = scanner.nextLine();
+
+        System.out.print("Enter product name: ");
+        String productName = scanner.nextLine();
+
+        System.out.print("Enter product price: ");
+        double productPrice = scanner.nextDouble();
+
+        System.out.print("Enter quantity: ");
+        int quantity = scanner.nextInt();
+
+        // Calculate the total purchase amount
+        double totalAmount = productPrice * quantity;
+
+        // Calculate discount according to the purchase amount
+        double discountPercentage = 0.0;
+
+        if (totalAmount >= 1000 && totalAmount < 5000) {
+            discountPercentage = 5.0;
+        } else if (totalAmount >= 5000) {
+            discountPercentage = 10.0;
+        }
+
+        double discountAmount = totalAmount * discountPercentage / 100;
+        double finalAmount = totalAmount - discountAmount;
+
+        // Display billing details
+        System.out.println("\n===== SmartStore Billing Details =====");
+        System.out.println("Customer Name: " + customerName);
+        System.out.println("Product Name: " + productName);
+        System.out.printf("Total Amount: Rs. %.2f%n", totalAmount);
+        System.out.printf("Discount Percentage: %.2f%%%n", discountPercentage);
+        System.out.printf("Discount Amount: Rs. %.2f%n", discountAmount);
+        System.out.printf("Final Amount: Rs. %.2f%n", finalAmount);
+
+        scanner.close();
+    }
+}
+
+Act as a Java programming instructor.
+
+Explain the selected Java code line by line.
+
+For each important statement:
+Explain what it does.
+Explain why it is required.
+Identify the Java concept being used.
+Give a simple example where applicable.
+
+Pay special attention to:
+Scanner and user input
+Variables and data types
+Arithmetic calculations
+If-else conditions
+Discount calculation
+Output statements
+
+Explain everything in beginner-friendly language.
+Ask at least one follow-up question about a statement you did not fully understand, for example: Why is price stored as double and quantity as int? or What does %.2f mean in printf?
+
+1. Package Declaration
+Lines 1
+Code:
+
+
+java
+package week2.day2.assignment1;
+What it does:
+Places the class in the week2.day2.assignment1 package.
+
+Why required:
+Organizes Java classes and matches the project's package structure.
+
+Java concept: Package declaration
+
+2. Import Statement
+Lines 3
+Code:
+
+
+java
+import java.util.Scanner;
+What it does:
+Imports the Scanner class.
+
+Why required:
+Allows the program to read input entered by the user.
+
+Java concept: Import statement
+
+Example:
+Without importing Scanner, Java will not recognize the Scanner class name.
+
+3. Class Declaration
+Lines 5–49
+Code:
+
+
+java
+public class BillingApplication
+What it does:
+Defines a public class named BillingApplication.
+
+Why required:
+Java programs are organized using classes.
+
+Java concept: Class declaration
+
+4. Main Method
+Line 7
+Code:
+
+
+java
+public static void main(String[] args)
+What it does:
+Defines the starting point of the Java program.
+
+Why required:
+The Java runtime executes the main method when the program runs.
+
+Java concept: Main method
+
+Details:
+
+public: The method can be accessed by Java.
+
+static: The method can run without creating a class object.
+
+void: The method does not return a value.
+
+String[] args: Stores command-line arguments.
+
+5. Scanner Object Creation
+Line 8
+Code:
+
+
+java
+Scanner scanner = new Scanner(System.in);
+What it does:
+Creates a Scanner that reads text typed into the console.
+
+Why required:
+It enables the program to accept customer and purchase information.
+
+Java concept: Object creation
+
+Details:
+
+Scanner: Scanner class.
+
+scanner: Variable representing the Scanner object.
+
+new: Creates the object.
+
+System.in: Represents keyboard input.
+
+6. Customer Name Input
+Lines 11–12
+Code:
+
+
+java
+System.out.print("Enter customer name: ");
+String customerName = scanner.nextLine();
+What it does:
+Displays a prompt and reads the complete customer name.
+
+Why required:
+The customer name must be supplied by the user.
+
+Java concept: Output, String variables, and Scanner input
+
+Details:
+
+print(): Displays text without moving to a new line.
+
+String: Stores text.
+
+nextLine(): Reads the complete entered line.
+
+Example:
+
+
+text
+Henry Smith
+7. Product Name Input
+Lines 14–15
+Code:
+
+
+java
+System.out.print("Enter product name: ");
+String productName = scanner.nextLine();
+What it does:
+Displays a product prompt and stores the entered product name.
+
+Why required:
+The billing display needs to include the product.
+
+Java concept: String variables and Scanner input
+
+Example:
+
+
+text
+Wireless Mouse
+8. Product Price Input
+Lines 17–18
+Code:
+
+
+java
+System.out.print("Enter product price: ");
+double productPrice = scanner.nextDouble();
+What it does:
+Reads a decimal product price.
+
+Why required:
+Prices may contain paise or cents.
+
+Java concept: Double data type and numeric input
+
+Details:
+
+double: Stores decimal values.
+
+nextDouble(): Reads decimal keyboard input.
+
+Example:
+
+
+text
+499.99
+Follow-up question:
+Why is productPrice stored as a double instead of an int?
+
+9. Quantity Input
+Lines 20–21
+Code:
+
+
+java
+System.out.print("Enter quantity: ");
+int quantity = scanner.nextInt();
+What it does:
+Reads the number of products purchased.
+
+Why required:
+Quantity is used to calculate the total purchase amount.
+
+Java concept: Integer data type and numeric input
+
+Details:
+
+int: Stores whole numbers.
+
+nextInt(): Reads whole-number keyboard input.
+
+Example:
+
+
+text
+3
+10. Calculate Total Amount
+Line 24
+Code:
+
+
+java
+double totalAmount = productPrice * quantity;
+What it does:
+Calculates the purchase amount before discount.
+
+Why required:
+The discount is determined from the total purchase amount.
+
+Java concept: Arithmetic multiplication
+
+Formula:
+
+t
+o
+t
+a
+l
+A
+m
+o
+u
+n
+t
+=
+p
+r
+o
+d
+u
+c
+t
+P
+r
+i
+c
+e
+×
+q
+u
+a
+n
+t
+i
+t
+y
+totalAmount=productPrice×quantity
+Example:
+
+
+text
+499.99 × 3 = 1499.97
+11. Initialize Discount Percentage
+Line 27
+Code:
+
+
+java
+double discountPercentage = 0.0;
+What it does:
+Creates the discount variable and initializes it to zero.
+
+Why required:
+Below Rs. 1,000, the discount should remain 0%.
+
+Java concept: Variable declaration and initialization
+
+12. First Discount Condition — 5%
+Lines 29–31
+Code:
+
+
+java
+if (totalAmount >= 1000 && totalAmount < 5000) {
+    discountPercentage = 5.0;
+}
+What it does:
+Checks whether the total is from Rs. 1,000 up to but below Rs. 5,000.
+
+Why required:
+Purchases in this range receive a 5% discount.
+
+Java concept: If statement, relational operators, and logical AND
+
+Operator explanation:
+
+Operator
+
+Meaning
+
+>=
+
+Greater than or equal to
+
+<
+
+Less than
+
+&&
+
+AND: both conditions must be true
+
+Examples:
+
+Purchase amount
+
+Discount
+
+Rs. 999.99
+
+No 5% discount
+
+Rs. 1,000
+
+5% discount
+
+Rs. 4,999.99
+
+5% discount
+
+Rs. 5,000
+
+Not in this 5% range
+
+13. Second Discount Condition — 10%
+Lines 32–34
+Code:
+
+
+java
+else if (totalAmount >= 5000) {
+    discountPercentage = 10.0;
+}
+What it does:
+Checks whether the total is Rs. 5,000 or above.
+
+Why required:
+Purchases at or above Rs. 5,000 receive a 10% discount.
+
+Java concept: Else-if statement
+
+Example:
+A total of Rs. 5,000 or Rs. 8,000 receives a 10% discount.
+
+14. Calculate Discount Amount
+Line 36
+Code:
+
+
+java
+double discountAmount = totalAmount * discountPercentage / 100;
+What it does:
+Calculates the amount deducted from the total.
+
+Why required:
+The customer must be shown the monetary value of the discount.
+
+Java concept: Arithmetic calculation and percentage conversion
+
+Formula:
+
+d
+i
+s
+c
+o
+u
+n
+t
+A
+m
+o
+u
+n
+t
+=
+t
+o
+t
+a
+l
+A
+m
+o
+u
+n
+t
+×
+d
+i
+s
+c
+o
+u
+n
+t
+P
+e
+r
+c
+e
+n
+t
+a
+g
+e
+100
+discountAmount= 
+100
+totalAmount×discountPercentage
+​
+ 
+Example:
+
+
+text
+Rs. 2,000 × 5 ÷ 100 = Rs. 100
+15. Calculate Final Amount
+Line 37
+Code:
+
+
+java
+double finalAmount = totalAmount - discountAmount;
+What it does:
+Subtracts the discount from the total purchase amount.
+
+Why required:
+This is the amount the customer must actually pay.
+
+Java concept: Arithmetic subtraction
+
+Example:
+
+
+text
+Rs. 2,000 - Rs. 100 = Rs. 1,900
+16. Display Billing Heading
+Line 40
+Code:
+
+
+java
+System.out.println("\n===== SmartStore Billing Details =====");
+What it does:
+Prints a blank line followed by a billing heading.
+
+Why required:
+It separates and identifies the displayed bill.
+
+Java concept: Console output and escape sequences
+
+Details:
+
+println(): Prints text and moves to the next line.
+
+\n: Inserts a newline.
+
+17. Display Customer and Product Names
+Lines 41–42
+Code:
+
+
+java
+System.out.println("Customer Name: " + customerName);
+System.out.println("Product Name: " + productName);
+What it does:
+Displays the entered customer and product names.
+
+Why required:
+The bill must identify the customer and purchased product.
+
+Java concept: String concatenation
+
+Example:
+
+
+java
+"Customer Name: " + "Henry Smith"
+Result:
+
+
+text
+Customer Name: Henry Smith
+18. Display Total Amount
+Line 43
+Code:
+
+
+java
+System.out.printf("Total Amount: Rs. %.2f%n", totalAmount);
+What it does:
+Displays the total amount with exactly two decimal places.
+
+Why required:
+Monetary values should be easy to read and consistently formatted.
+
+Java concept: Formatted output
+
+Format explanation:
+
+Format
+
+Meaning
+
+%.2f
+
+Formats a decimal number with exactly two digits after the decimal point
+
+%n
+
+Starts a new platform-compatible line
+
+Example:
+
+
+text
+1234.5 is displayed as 1234.50
+19. Display Discount Percentage
+Line 44
+Code:
+
+
+java
+System.out.printf("Discount Percentage: %.2f%%%n", discountPercentage);
+What it does:
+Displays the discount percentage followed by a percent sign.
+
+Why required:
+It tells the customer which discount was applied.
+
+Java concept: Formatted output
+
+Format explanation:
+
+Format
+
+Meaning
+
+%.2f
+
+Formats the percentage with two decimal places
+
+%%
+
+Prints one literal percent sign
+
+%n
+
+Starts a new line
+
+Example:
+
+A discountPercentage value of 5.0 is displayed as:
+
+
+text
+5.00%
+20. Display Discount and Final Amount
+Lines 45–46
+Code:
+
+
+java
+System.out.printf("Discount Amount: Rs. %.2f%n", discountAmount);
+System.out.printf("Final Amount: Rs. %.2f%n", finalAmount);
+What it does:
+Displays the discount amount and amount payable.
+
+Why required:
+These values complete the billing information.
+
+Java concept: Formatted console output
+
+Example:
+
+
+text
+Discount Amount: Rs. 100.00
+Final Amount: Rs. 1900.00
+21. Close Scanner
+Line 48
+Code:
+
+
+java
+scanner.close();
+What it does:
+Closes the Scanner.
+
+Why required:
+Releases the input resource after it is no longer needed.
+
+Java concept: Resource management
+
+Before output:
+
+===== SmartStore Billing Details =====
+Customer Name: Rahul
+Product Name: Laptop Bag
+Total Amount: Rs. 6000.00
+Discount Percentage: 10.00%
+Discount Amount: Rs. 600.00
+Final Amount: Rs. 5400.00
+Review the existing SmartStore billing application.
+
+Refactor the code using these requirements:
+Move discount calculation into a separate method:
+public static double calculateDiscount(double totalAmount)
+It must return the discount amount in rupees (not the percentage).
+Move bill printing into a separate method named printBill().
+Use meaningful variable and method names.
+Remove unnecessary code.
+Improve readability and maintainability.
+Do not change the existing business rules or the output format.
+Do not introduce advanced Java concepts.
+
+Explain the changes you made and why they improve the code.
+
+
+package week2.day2.assignment1;
+
+import java.util.Scanner;
+
+public class BillingApplication {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter customer name: ");
+        String customerName = scanner.nextLine();
+
+        System.out.print("Enter product name: ");
+        String productName = scanner.nextLine();
+
+        System.out.print("Enter product price: ");
+        double productPrice = scanner.nextDouble();
+
+        System.out.print("Enter quantity: ");
+        int quantity = scanner.nextInt();
+
+        double totalAmount = productPrice * quantity;
+        double discountAmount = calculateDiscount(totalAmount);
+        double finalAmount = totalAmount - discountAmount;
+
+        printBill(customerName, productName, totalAmount,
+                  discountAmount, finalAmount);
+
+        scanner.close();
+    }
+
+    // Calculates and returns the discount amount in rupees
+    public static double calculateDiscount(double totalAmount) {
+        double discountPercentage = 0.0;
+
+        if (totalAmount >= 1000 && totalAmount < 5000) {
+            discountPercentage = 5.0;
+        } else if (totalAmount >= 5000) {
+            discountPercentage = 10.0;
+        }
+
+        double discountAmount =
+                totalAmount * discountPercentage / 100;
+
+        return discountAmount;
+    }
+
+    // Prints the completed billing details
+    public static void printBill(String customerName,
+                                 String productName,
+                                 double totalAmount,
+                                 double discountAmount,
+                                 double finalAmount) {
+        double discountPercentage;
+
+        if (totalAmount >= 1000 && totalAmount < 5000) {
+            discountPercentage = 5.0;
+        } else if (totalAmount >= 5000) {
+            discountPercentage = 10.0;
+        } else {
+            discountPercentage = 0.0;
+        }
+
+        System.out.println("\n===== SmartStore Billing Details =====");
+        System.out.println("Customer Name: " + customerName);
+        System.out.println("Product Name: " + productName);
+        System.out.printf("Total Amount: Rs. %.2f%n", totalAmount);
+        System.out.printf("Discount Percentage: %.2f%%%n",
+                          discountPercentage);
+        System.out.printf("Discount Amount: Rs. %.2f%n", discountAmount);
+        System.out.printf("Final Amount: Rs. %.2f%n", finalAmount);
+    }
+}
+
+
+
+After output:
+Customer Name: Rahul
+Product Name: Laptop Bag
+Total Amount: Rs. 6000.00
+Discount Percentage: 10.00%
+Discount Amount: Rs. 600.00
+Final Amount: Rs. 5400.00
+
+
+Act as a Java software tester.
+
+Analyze the SmartStore billing application and generate test cases.
+
+Include:
+Purchase amount below Rs. 1,000.
+Purchase amount exactly Rs. 1,000.
+Purchase amount Rs. 4,999.
+Purchase amount exactly Rs. 5,000.
+Purchase amount above Rs. 5,000.
+Quantity greater than one.
+
+For each test case provide:
+Test input (price and quantity)
+Expected discount percentage
+Expected discount amount
+Expected final amount
+
+Identify any additional edge cases that should be tested.
+
+BillingApplicationTest.java — Test Case Breakdown
+Test file: BillingApplicationTest.java
+Test framework: JUnit 5
+Test class: BillingApplicationTest
+Method under test: BillingApplication.calculateDiscount(double)
+
+The following is organized into individual test cases, edge cases, expected results, and a quick revision table. All original values and explanations are preserved.
+
+1. Test Case — Purchase Below Rs. 1,000
+Test Case 1
+Test name: Purchase amount below Rs. 1,000
+
+Input values:
+
+Variable
+
+Value
+
+Price
+
+Rs. 250.00
+
+Quantity
+
+3
+
+Purchase amount
+
+Rs. 750.00
+
+Expected results:
+
+Expected value
+
+Result
+
+Discount percentage
+
+0.0%
+
+Discount amount
+
+Rs. 0.00
+
+Final amount
+
+Rs. 750.00
+
+Purpose:
+Verifies that purchases below Rs. 1,000 do not receive a discount.
+
+Java concept: Conditional testing and boundary testing.
+
+2. Test Case — Purchase Exactly Rs. 1,000
+Test Case 2
+Test name: Purchase amount exactly Rs. 1,000
+
+Input values:
+
+Variable
+
+Value
+
+Price
+
+Rs. 500.00
+
+Quantity
+
+2
+
+Purchase amount
+
+Rs. 1,000.00
+
+Expected results:
+
+Expected value
+
+Result
+
+Discount percentage
+
+5.0%
+
+Discount amount
+
+Rs. 50.00
+
+Final amount
+
+Rs. 950.00
+
+Purpose:
+Verifies that a purchase of exactly Rs. 1,000 qualifies for the 5% discount.
+
+Java concept: Boundary value testing and relational operators.
+
+3. Test Case — Purchase Amount Rs. 4,999
+Test Case 3
+Test name: Purchase amount Rs. 4,999
+
+Input values:
+
+Variable
+
+Value
+
+Price
+
+Rs. 499.90
+
+Quantity
+
+10
+
+Purchase amount
+
+Rs. 4,999.00
+
+Expected results:
+
+Expected value
+
+Result
+
+Discount percentage
+
+5.0%
+
+Discount amount
+
+Rs. 249.95
+
+Final amount
+
+Rs. 4,749.05
+
+Purpose:
+Verifies that purchases below Rs. 5,000 receive a 5% discount.
+
+Java concept: Conditional testing and arithmetic calculations.
+
+4. Test Case — Purchase Exactly Rs. 5,000
+Test Case 4
+Test name: Purchase amount exactly Rs. 5,000
+
+Input values:
+
+Variable
+
+Value
+
+Price
+
+Rs. 1,000.00
+
+Quantity
+
+5
+
+Purchase amount
+
+Rs. 5,000.00
+
+Expected results:
+
+Expected value
+
+Result
+
+Discount percentage
+
+10.0%
+
+Discount amount
+
+Rs. 500.00
+
+Final amount
+
+Rs. 4,500.00
+
+Purpose:
+Verifies that a purchase of exactly Rs. 5,000 qualifies for the 10% discount instead of the 5% discount.
+
+Java concept: Boundary value testing and else-if conditions.
+
+5. Test Case — Purchase Above Rs. 5,000
+Test Case 5
+Test name: Purchase amount above Rs. 5,000
+
+Input values:
+
+Variable
+
+Value
+
+Price
+
+Rs. 1,750.00
+
+Quantity
+
+4
+
+Purchase amount
+
+Rs. 7,000.00
+
+Expected results:
+
+Expected value
+
+Result
+
+Discount percentage
+
+10.0%
+
+Discount amount
+
+Rs. 700.00
+
+Final amount
+
+Rs. 6,300.00
+
+Purpose:
+Verifies that purchases above Rs. 5,000 receive a 10% discount.
+
+Java concept: Conditional testing and arithmetic calculations.
+
+6. Test Case — Quantity Greater Than One
+Test Case 6
+Test name: Quantity greater than one
+
+Input values:
+
+Variable
+
+Value
+
+Price
+
+Rs. 1,250.00
+
+Quantity
+
+4
+
+Purchase amount
+
+Rs. 5,000.00
+
+Expected results:
+
+Expected value
+
+Result
+
+Discount percentage
+
+10.0%
+
+Discount amount
+
+Rs. 500.00
+
+Final amount
+
+Rs. 4,500.00
+
+Purpose:
+Verifies that the application correctly multiplies the product price by the quantity before calculating the discount.
+
+Java concept: Arithmetic multiplication and method testing.
+
+Edge Cases
+Edge cases test unusual or boundary inputs to ensure the program behaves correctly in situations that might otherwise cause errors.
+
+7. Edge Case — Just Below Rs. 1,000
+Edge Case 1
+Test name: Just below Rs. 1,000
+
+Input value:
+
+Variable
+
+Value
+
+Purchase amount
+
+Rs. 999.99
+
+Expected results:
+
+Expected value
+
+Result
+
+Discount percentage
+
+0.0%
+
+Discount amount
+
+Rs. 0.00
+
+Purpose:
+Verifies that a purchase of Rs. 999.99 does not qualify for the 5% discount.
+
+Java concept: Boundary value testing.
+
+8. Edge Case — Just Below Rs. 5,000
+Edge Case 2
+Test name: Just below Rs. 5,000
+
+Input value:
+
+Variable
+
+Value
+
+Purchase amount
+
+Rs. 4,999.99
+
+Expected results:
+
+Expected value
+
+Result
+
+Discount percentage
+
+5.0%
+
+Discount amount
+
+Rs. 249.9995
+
+Final amount
+
+Rs. 4,749.9905
+
+Purpose:
+Verifies that a purchase just below Rs. 5,000 still receives the 5% discount rather than the 10% discount.
+
+Java concept: Boundary value testing and decimal arithmetic.
+
+9. Edge Case — Zero Quantity
+Edge Case 3
+Test name: Zero quantity
+
+Input values:
+
+Variable
+
+Value
+
+Price
+
+Rs. 500.00
+
+Quantity
+
+0
+
+Purchase amount
+
+Rs. 0.00
+
+Expected results:
+
+Expected value
+
+Result
+
+Discount percentage
+
+0.0%
+
+Discount amount
+
+Rs. 0.00
+
+Final amount
+
+Rs. 0.00
+
+Purpose:
+Verifies that purchasing zero products results in a zero purchase amount and no discount.
+
+Java concept: Edge case testing and arithmetic multiplication.
+
+10. Edge Case — Zero Price
+Edge Case 4
+Test name: Zero price
+
+Input values:
+
+Variable
+
+Value
+
+Price
+
+Rs. 0.00
+
+Quantity
+
+10
+
+Purchase amount
+
+Rs. 0.00
+
+Expected results:
+
+Expected value
+
+Result
+
+Discount percentage
+
+0.0%
+
+Discount amount
+
+Rs. 0.00
+
+Final amount
+
+Rs. 0.00
+
+Purpose:
+Verifies that a product with zero price results in no purchase amount or discount.
+
+Java concept: Edge case testing and arithmetic calculations.
+
+11. Edge Case — Negative Price
+Edge Case 5
+Test name: Negative price
+
+Input requirement:
+
+
+text
+requiresValidation: true
+Expected behavior:
+
+
+text
+Reject the input or display an error.
+Purpose:
+Verifies that the application does not accept negative product prices.
+
+Java concept: Input validation and conditional statements.
+
+Example:
+
+
+text
+Product price: -500
+Error: Product price cannot be negative.
+12. Edge Case — Negative Quantity
+Edge Case 6
+Test name: Negative quantity
+
+Input requirement:
+
+
+text
+requiresValidation: true
+Expected behavior:
+
+
+text
+Reject the input or display an error.
+Purpose:
+Verifies that the application does not accept negative product quantities.
+
+Java concept: Input validation and conditional statements.
+
+Example:
+
+
+text
+Quantity: -3
+Error: Quantity cannot be negative.
+Complete Test Case Summary
+This table provides a quick overview of all 12 test scenarios.
+
+#
+
+Test scenario
+
+Purchase amount
+
+Discount
+
+1
+
+Below Rs. 1,000
+
+Rs. 750.00
+
+0%
+
+2
+
+Exactly Rs. 1,000
+
+Rs. 1,000.00
+
+5%
+
+3
+
+Rs. 4,999
+
+Rs. 4,999.00
+
+5%
+
+4
+
+Exactly Rs. 5,000
+
+Rs. 5,000.00
+
+10%
+
+5
+
+Above Rs. 5,000
+
+Rs. 7,000.00
+
+10%
+
+6
+
+Quantity greater than one
+
+Rs. 5,000.00
+
+10%
+
+7
+
+Just below Rs. 1,000
+
+Rs. 999.99
+
+0%
+
+8
+
+Just below Rs. 5,000
+
+Rs. 4,999.99
+
+5%
+
+9
+
+Zero quantity
+
+Rs. 0.00
+
+0%
+
+10
+
+Zero price
+
+Rs. 0.00
+
+0%
+
+11
+
+Negative price
+
+Invalid
+
+Validation
+
+12
+
+Negative quantity
+
+Invalid
+
+Validation
+
+Important Java Testing Concepts
+Concept
+
+Meaning
+
+Unit testing
+
+Testing an individual method independently.
+
+JUnit 5
+
+A Java framework used to write and execute tests.
+
+Test case
+
+A specific scenario used to verify program behavior.
+
+Expected result
+
+The result the program should produce.
+
+Actual result
+
+The result the program really produces.
+
+Boundary value testing
+
+Testing values at or near the limits of conditions.
+
+Edge case testing
+
+Testing unusual or exceptional input values.
+
+Input validation
+
+Checking whether entered values are acceptable.
+
+Assertion
+
+A statement that checks whether the actual result matches the expected result.
+
+Understanding the Discount Rules
+Discount calculation rules
+
+Below Rs. 1,000
+
+0% discount
+Purchase amount is less than 1,000.
+
+Rs. 1,000 to Rs. 4,999.99
+
+5% discount
+Purchase amount is at least 1,000 but below 5,000.
+
+Rs. 5,000 and above
+
+10% discount
+Purchase amount is at least 5,000.
+
+
+I have a Java billing application with this method:
+
+public static double calculateDiscount(double totalAmount)
+
+It returns the discount amount in rupees.
+Generate beginner-friendly JUnit 5 test methods for it.
+
+Test the following:
+Amount below Rs. 1,000 (800)
+Amount exactly Rs. 1,000
+Amount Rs. 4,999
+Amount exactly Rs. 5,000
+Amount above Rs. 5,000 (7,000)
+
+Use assertEquals(expected, actual, 0.001) for double values.
+Explain each test case and how the assertion verifies the expected result.
+Do not modify the business requirements.
+
+
+
+# BillingApplicationTest.java — JUnit 5 Test Breakdown
+
+**Test file:** `BillingApplicationTest.java`  
+**Test framework:** JUnit 5  
+**Package:** `week2.day2.assignment1`  
+**Test class:** `BillingApplicationTest`  
+**Method under test:** `BillingApplication.calculateDiscount(double)`
+
+---
+
+## 1. Import Statements
+
+**Code:**
+
+```java
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+```
+
+**What it does:**
+
+Imports the JUnit functionality required to write and execute unit tests.
+
+**Why required:**
+
+- `assertEquals`: Checks whether the expected result matches the actual result.
+- `@Test`: Identifies a method as a test method that JUnit should execute.
+
+**Java concept:** Import statements and JUnit testing.
+
+---
+
+## 2. Class Declaration
+
+**Code:**
+
+```java
+public class BillingApplicationTest {
+```
+
+**What it does:**
+
+Defines a test class named `BillingApplicationTest`.
+
+**Why required:**
+
+Organizes all the test methods used to test the BillingApplication functionality.
+
+**Java concept:** Class declaration.
+
+---
+
+## 3. Method Under Test
+
+**Method:**
+
+```java
+BillingApplication.calculateDiscount(double)
+```
+
+**What it does:**
+
+Represents the method being tested. It receives a purchase amount and calculates the applicable discount amount.
+
+**Why required:**
+
+Separates the discount calculation from the rest of the billing application so that it can be tested independently.
+
+**Java concept:** Method testing and unit testing.
+
+**Note:** The original billing application calculates discounts directly inside `main()`. To test this method independently, the calculation must first be extracted into a separate method.
+
+---
+
+# JUnit Test Methods
+
+## 4. Test Case 1 — Purchase Below Rs. 1,000
+
+**Method name:**
+
+```java
+calculateDiscountBelowOneThousand
+```
+
+**Test input:**
+
+```java
+double totalAmount = 800.0;
+```
+
+**Expected discount amount:**
+
+```java
+0.0
+```
+
+**Calculation:**
+
+The amount is below Rs. 1,000, so no discount is applied.
+
+**Assertion:**
+
+```java
+assertEquals(0.0, actualDiscount, 0.001);
+```
+
+**What it does:**
+
+Checks whether the actual discount is equal to zero, allowing a small difference of 0.001.
+
+**Why required:**
+
+Verifies that purchases below Rs. 1,000 do not receive a discount.
+
+**Java concept:** JUnit assertions and conditional testing.
+
+**Verification:**
+
+The assertion passes when the returned discount is within 0.001 of 0.0.
+
+---
+
+## 5. Test Case 2 — Purchase Exactly Rs. 1,000
+
+**Method name:**
+
+```java
+calculateDiscountAtOneThousand
+```
+
+**Test input:**
+
+```java
+double totalAmount = 1000.0;
+```
+
+**Expected discount percentage:**
+
+```java
+5.0
+```
+
+**Expected discount amount:**
+
+```java
+50.0
+```
+
+**Calculation:**
+
+```text
+1000 × 5 ÷ 100 = 50
+```
+
+**Assertion:**
+
+```java
+assertEquals(50.0, actualDiscount, 0.001);
+```
+
+**What it does:**
+
+Checks whether the returned discount amount is approximately Rs. 50.00.
+
+**Why required:**
+
+Verifies that a purchase of exactly Rs. 1,000 qualifies for the 5% discount.
+
+**Java concept:** Boundary value testing and JUnit assertions.
+
+**Verification:**
+
+The assertion passes when the returned discount is within 0.001 of Rs. 50.0.
+
+---
+
+## 6. Test Case 3 — Purchase Amount Rs. 4,999
+
+**Method name:**
+
+```java
+calculateDiscountAtFourThousandNineHundredNinetyNine
+```
+
+**Test input:**
+
+```java
+double totalAmount = 4999.0;
+```
+
+**Expected discount percentage:**
+
+```java
+5.0
+```
+
+**Expected discount amount:**
+
+```java
+249.95
+```
+
+**Calculation:**
+
+```text
+4999 × 5 ÷ 100 = 249.95
+```
+
+**Assertion:**
+
+```java
+assertEquals(249.95, actualDiscount, 0.001);
+```
+
+**What it does:**
+
+Checks whether the returned discount amount is approximately Rs. 249.95.
+
+**Why required:**
+
+Verifies that purchases below Rs. 5,000 receive the 5% discount.
+
+**Java concept:** Conditional testing, arithmetic calculations, and JUnit assertions.
+
+**Verification:**
+
+The assertion passes when the returned discount is within 0.001 of Rs. 249.95.
+
+---
+
+## 7. Test Case 4 — Purchase Exactly Rs. 5,000
+
+**Method name:**
+
+```java
+calculateDiscountAtFiveThousand
+```
+
+**Test input:**
+
+```java
+double totalAmount = 5000.0;
+```
+
+**Expected discount percentage:**
+
+```java
+10.0
+```
+
+**Expected discount amount:**
+
+```java
+500.0
+```
+
+**Calculation:**
+
+```text
+5000 × 10 ÷ 100 = 500
+```
+
+**Assertion:**
+
+```java
+assertEquals(500.0, actualDiscount, 0.001);
+```
+
+**What it does:**
+
+Checks whether the returned discount amount is approximately Rs. 500.00.
+
+**Why required:**
+
+Verifies that a purchase of exactly Rs. 5,000 qualifies for the 10% discount instead of the 5% discount.
+
+**Java concept:** Boundary value testing, else-if conditions, and JUnit assertions.
+
+**Verification:**
+
+The assertion passes when the returned discount is within 0.001 of Rs. 500.0.
+
+---
+
+## 8. Test Case 5 — Purchase Above Rs. 5,000
+
+**Method name:**
+
+```java
+calculateDiscountAboveFiveThousand
+```
+
+**Test input:**
+
+```java
+double totalAmount = 7000.0;
+```
+
+**Expected discount percentage:**
+
+```java
+10.0
+```
+
+**Expected discount amount:**
+
+```java
+700.0
+```
+
+**Calculation:**
+
+```text
+7000 × 10 ÷ 100 = 700
+```
+
+**Assertion:**
+
+```java
+assertEquals(700.0, actualDiscount, 0.001);
+```
+
+**What it does:**
+
+Checks whether the returned discount amount is approximately Rs. 700.00.
+
+**Why required:**
+
+Verifies that purchases above Rs. 5,000 receive a 10% discount.
+
+**Java concept:** Conditional testing and JUnit assertions.
+
+**Verification:**
+
+The assertion passes when the returned discount is within 0.001 of Rs. 700.0.
+
+---
+
+# Understanding JUnit Assertions
+
+## 9. Assertion Format
+
+**Code:**
+
+```java
+assertEquals(expected, actual, 0.001);
+```
+
+**What it does:**
+
+Compares the expected result with the actual result returned by the method being tested.
+
+**Why required:**
+
+Allows JUnit to automatically determine whether a test passes or fails.
+
+**Java concept:** JUnit assertions.
+
+### Explanation of Parameters
+
+| Parameter | Meaning |
+|---|---|
+| `expected` | The correct discount amount calculated by the test. |
+| `actual` | The value returned by `BillingApplication.calculateDiscount()`. |
+| `0.001` | The permitted difference between the two values. |
+
+### Understanding the Delta (0.001)
+
+The third parameter is called the **delta**.
+
+It specifies how much difference is acceptable between the expected and actual values.
+
+**Example:**
+
+```java
+assertEquals(50.0, actualDiscount, 0.001);
+```
+
+The test passes if the actual value is between:
+
+```text
+49.999 and 50.001
+```
+
+The test fails if the actual value falls outside this range.
+
+**Why is delta used?**
+
+Java's `double` data type can produce small floating-point precision differences.
+
+For example, a calculation might produce:
+
+```text
+Expected: 50.000
+Actual:   49.999999999
+```
+
+Using a delta prevents insignificant floating-point differences from causing a test to fail.
+
+---
+
+# Complete Test Case Summary
+
+| # | Test method | Input | Expected discount |
+|---|---|---:|---:|
+| 1 | calculateDiscountBelowOneThousand | 800.00 | Rs. 0.00 |
+| 2 | calculateDiscountAtOneThousand | 1,000.00 | Rs. 50.00 |
+| 3 | calculateDiscountAtFourThousandNineHundredNinetyNine | 4,999.00 | Rs. 249.95 |
+| 4 | calculateDiscountAtFiveThousand | 5,000.00 | Rs. 500.00 |
+| 5 | calculateDiscountAboveFiveThousand | 7,000.00 | Rs. 700.00 |
+
+---
+
+# Important Java and JUnit Concepts
+
+| Concept | Meaning |
+|---|---|
+| JUnit 5 | A framework for testing Java applications. |
+| Unit testing | Testing individual methods independently. |
+| `@Test` | Marks a method as a JUnit test method. |
+| `assertEquals()` | Checks whether expected and actual values match within the permitted tolerance. |
+| Expected value | The result that should be produced. |
+| Actual value | The result produced by the method. |
+| Delta | The permitted difference between expected and actual decimal values. |
+| Boundary value testing | Tests values at important condition boundaries. |
+| Test method | A method that checks a particular application behavior. |
+| Floating-point precision | Small inaccuracies that can occur when representing decimal numbers. |
+
+---
+
+# Understanding the Discount Rules
+
+| Purchase amount | Discount percentage |
+|---|---:|
+| Below Rs. 1,000 | 0% |
+| Rs. 1,000 to below Rs. 5,000 | 5% |
+| Rs. 5,000 and above | 10% |
+
+### Discount Formula
+
+```text
+Discount Amount = Purchase Amount × Discount Percentage ÷ 100
+```
+
+### Example
+
+```text
+Purchase Amount = Rs. 1,000
+Discount Percentage = 5%
+
+Discount Amount = 1000 × 5 ÷ 100
+Discount Amount = Rs. 50
+```
+
+---
+
+# Final Revision Notes
+
+Remember these important points:
+
+1. JUnit 5 is used to write and execute unit tests.
+2. `@Test` tells JUnit which methods should be executed as tests.
+3. `assertEquals()` checks whether the expected and actual results match.
+4. The third argument in `assertEquals()` represents the permitted difference (delta) for decimal comparisons.
+5. Each test method checks a specific purchase amount.
+6. Boundary testing is important for verifying discount conditions.
+7. Testing exactly Rs. 1,000 and Rs. 5,000 ensures that the discount thresholds work correctly.
+8. Testing below and above the thresholds ensures that the correct discount is applied.
+
+**Overall purpose:** These five JUnit test methods verify that `BillingApplication.calculateDiscount(double)` correctly calculates discounts for different purchase amounts.
+
+Logical Issues
+
+	•  No input validation: Negative prices or quantities can produce incorrect totals and discounts.
+	•  Zero or non-numeric input: The Scanner has no validation for invalid values or input failures.
+	•  Mixed validation in display logic: printBill() independently repeats the discount-percentage calculation instead of receiving the percentage.
+	•  Limited purchase handling: The application processes only one customer and one product per run.
+	•  Floating-point currency precision: double can introduce rounding errors. Monetary applications should prefer BigDecimal, although that may be considered more advanced Java.
+	•  Discount percentage and amount can become inconsistent: Both calculateDiscount() and printBill() implement the discount rules separately.
+
+Security and Reliability Issues
+
+	•  Untrusted console input: Without validation, unexpected input can cause exceptions.
+	•  Scanner misuse: nextDouble() or nextInt() may throw InputMismatchException for non-numeric input.
+	•  Scanner resource handling: scanner.close() is safe in this program but could prevent reuse if placed in a reusable application component.
+	•  No exception handling: The application may terminate abruptly after invalid input.
+	•  No decimal or overflow checks: Extremely large values may overflow or lose precision.
+	•  Console output only: There is no audit trail, transaction storage, or logging.
+	•  No concurrency requirements: The static methods are thread-safe as written, but a production version is usually more structured.
+
+Improvements Before Deployment
+
+	1. Validate the customer name and product name are not empty.
+	2. Require a product price greater than zero.
+	3. Require a quantity greater than zero.
+	4. Handle InputMismatchException or validate input using hasNextDouble() and hasNextInt().
+	5. Keep a single source of truth for discount rules.
+	6. Pass the discount percentage to printBill() or create a bill object to keep calculations consistent.
+	7. Consider BigDecimal for currency calculations and formatting.
+	8. Prevent infinite or negative totals.
+	9. Separate input, calculation, and output responsibilities further.
+	10. Add JUnit tests for boundaries and edge cases.
+	11. Include clear error messages for invalid input.
+	12. Close the Scanner safely in the same scope where it is created.
+	13. Format output consistently and test it for decimal values.
+	14. Limit product price and quantity to reasonable ranges if business rules define limits.
+
+Not a deployment blocker: The current business rules themselves are correct. The main blockers are input validation, robust error handling, and precise currency handling.
+
+
+
+Act as an experienced Java developer.
+Develop a simple console-based Employee Salary Calculator for a company.
+The class must be named SalaryCalculator.
+Requirements:
+Accept the employee ID.
+Accept the employee name.
+Accept the employee's basic salary in rupees.
+Calculate House Rent Allowance (HRA) as 20% of the basic salary.
+Calculate Dearness Allowance (DA) as 10% of the basic salary.
+Calculate gross salary using the formula: Gross Salary = Basic Salary + HRA + DA.
+Deduct professional tax of Rs. 200 if the gross salary is strictly above Rs. 20,000.
+Do not deduct professional tax if the gross salary is Rs. 20,000 or below.
+Calculate net salary: Net Salary = Gross Salary - Professional Tax.
+Display the employee ID, employee name, basic salary, HRA, DA, gross salary, professional tax and final net salary.
+Constraints:
+Use Java fundamentals only: variables, data types, if-else statements and arithmetic operators.
+Use Scanner for accepting user input.
+Use meaningful variable names.
+Use double for salary calculations.
+Display all salary amounts to 2 decimal places.
+Do not use advanced Java features.
+Write readable, beginner-friendly code.
+Include comments explaining the important calculations and conditions.
+Do not use unnecessary classes or complicated programming concepts.
+Output:
+Generate a complete, executable Java program with a main() method.
+Include a sample input and expected output to demonstrate how the program works.
+Explain the important parts of the generated code in beginner-friendly language.
+
+
+Act as an experienced Java developer.
+Develop a simple console-based Employee Salary Calculator for a company.
+The class must be named SalaryCalculator.
+Requirements:
+Accept the employee ID.
+Accept the employee name.
+Accept the employee's basic salary in rupees.
+Calculate House Rent Allowance (HRA) as 20% of the basic salary.
+Calculate Dearness Allowance (DA) as 10% of the basic salary.
+Calculate gross salary using the formula: Gross Salary = Basic Salary + HRA + DA.
+Deduct professional tax of Rs. 200 if the gross salary is strictly above Rs. 20,000.
+Do not deduct professional tax if the gross salary is Rs. 20,000 or below.
+Calculate net salary: Net Salary = Gross Salary - Professional Tax.
+Display the employee ID, employee name, basic salary, HRA, DA, gross salary, professional tax and final net salary.
+Constraints:
+Use Java fundamentals only: variables, data types, if-else statements and arithmetic operators.
+Use Scanner for accepting user input.
+Use meaningful variable names.
+Use double for salary calculations.
+Display all salary amounts to 2 decimal places.
+Do not use advanced Java features.
+Write readable, beginner-friendly code.
+Include comments explaining the important calculations and conditions.
+Do not use unnecessary classes or complicated programming concepts.
+Output:
+Generate a complete, executable Java program with a main() method.
+Include a sample input and expected output to demonstrate how the program works.
+Explain the important parts of the generated code in beginner-friendly language.
+
+
+
+
+
+
+
+package week2.day2.assignment1;
+
+import java.util.Scanner;
+
+public class SalaryCalculator {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Accept employee details
+        System.out.print("Enter employee ID: ");
+        int employeeId = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("Enter employee name: ");
+        String employeeName = scanner.nextLine();
+
+        System.out.print("Enter basic salary: Rs. ");
+        double basicSalary = scanner.nextDouble();
+
+        // Calculate salary components
+        double houseRentAllowance = basicSalary * 20 / 100;
+        double dearnessAllowance = basicSalary * 10 / 100;
+        double grossSalary =
+                basicSalary + houseRentAllowance + dearnessAllowance;
+
+        // Professional tax is deducted only when gross salary is above Rs. 20,000
+        double professionalTax = 0.0;
+
+        if (grossSalary > 20000) {
+            professionalTax = 200.0;
+        }
+
+        double netSalary = grossSalary - professionalTax;
+
+        // Display employee salary details
+        System.out.println("\n===== Employee Salary Details =====");
+        System.out.println("Employee ID: " + employeeId);
+        System.out.println("Employee Name: " + employeeName);
+        System.out.printf("Basic Salary: Rs. %.2f%n", basicSalary);
+        System.out.printf("HRA: Rs. %.2f%n", houseRentAllowance);
+        System.out.printf("DA: Rs. %.2f%n", dearnessAllowance);
+        System.out.printf("Gross Salary: Rs. %.2f%n", grossSalary);
+        System.out.printf("Professional Tax: Rs. %.2f%n", professionalTax);
+        System.out.printf("Net Salary: Rs. %.2f%n", netSalary);
+
+        scanner.close();
+    }
+}
+
+
+
+# SalaryCalculator.java — Code Breakdown
+
+**File name:** `SalaryCalculator.java`  
+**Package:** `week2.day2.assignment1`
+
+---
+
+## 1. Package Declaration
+
+**Lines:** 1
+
+**Code:**
+
+```java
+package week2.day2.assignment1;
+```
+
+**What it does:**
+
+Places the class in the `week2.day2.assignment1` package.
+
+**Why required:**
+
+Organizes Java classes and matches the project's package structure.
+
+**Java concept:** Package declaration.
+
+---
+
+## 2. Import Statement
+
+**Lines:** 3
+
+**Code:**
+
+```java
+import java.util.Scanner;
+```
+
+**What it does:**
+
+Imports the Scanner class.
+
+**Why required:**
+
+Scanner accepts keyboard input.
+
+**Java concept:** Import statement.
+
+---
+
+## 3. Class Declaration
+
+**Lines:** 5
+
+**Code:**
+
+```java
+public class SalaryCalculator
+```
+
+**What it does:**
+
+Defines a public class named `SalaryCalculator`.
+
+**Why required:**
+
+The Java program is organized inside this class.
+
+**Java concept:** Class declaration.
+
+---
+
+## 4. Main Method
+
+**Lines:** 7
+
+**Code:**
+
+```java
+public static void main(String[] args)
+```
+
+**What it does:**
+
+Defines the program's starting method.
+
+**Why required:**
+
+Java starts the application by executing `main()`.
+
+**Java concept:** Main method.
+
+**Details:**
+
+- `public`: Allows the method to be accessed by the Java runtime.
+- `static`: Allows the method to run without creating a class object.
+- `void`: Indicates that the method does not return a value.
+- `String[] args`: Stores command-line arguments.
+
+---
+
+## 5. Scanner Object Creation
+
+**Lines:** 8
+
+**Code:**
+
+```java
+Scanner scanner = new Scanner(System.in);
+```
+
+**What it does:**
+
+Creates a Scanner for reading console input.
+
+**Why required:**
+
+Allows the program to accept employee information and salary details from the keyboard.
+
+**Java concept:** Object creation.
+
+**Details:**
+
+- `Scanner`: The Scanner class.
+- `scanner`: Represents the created Scanner object.
+- `new`: Creates a new object.
+- `System.in`: Represents keyboard input.
+
+---
+
+## 6. Employee ID Input
+
+**Lines:** 11–12
+
+**Code:**
+
+```java
+System.out.print("Enter employee ID: ");
+int employeeId = scanner.nextInt();
+```
+
+**What it does:**
+
+Displays a prompt and reads the employee ID.
+
+**Why required:**
+
+The application needs the employee ID to identify the employee in the salary report.
+
+**Java concept:** Integer input.
+
+**Details:**
+
+- `int`: Stores a whole number.
+- `nextInt()`: Reads a whole-number value.
+- `print()`: Displays text without moving to a new line.
+
+**Example:**
+
+```text
+101
+```
+
+---
+
+## 7. Consume the Remaining Newline
+
+**Lines:** 13
+
+**Code:**
+
+```java
+scanner.nextLine();
+```
+
+**What it does:**
+
+Consumes the newline character left by `nextInt()`.
+
+**Why required:**
+
+It ensures that `employeeName` is read as a complete new line.
+
+**Java concept:** Scanner input handling.
+
+**Important explanation:**
+
+When `nextInt()` reads the employee ID, it reads the number but does not consume the Enter key's newline character.
+
+Calling `nextLine()` immediately afterward consumes that remaining newline.
+
+Without this statement, the next `nextLine()` might read the leftover newline instead of waiting for the employee's name.
+
+---
+
+## 8. Employee Name Input
+
+**Lines:** 15–16
+
+**Code:**
+
+```java
+System.out.print("Enter employee name: ");
+String employeeName = scanner.nextLine();
+```
+
+**What it does:**
+
+Displays a prompt and reads the employee name.
+
+**Why required:**
+
+The salary report needs to identify the employee by name.
+
+**Java concept:** String input.
+
+**Details:**
+
+- `String`: Stores text.
+- `nextLine()`: Reads the complete line, including spaces.
+
+**Example:**
+
+```text
+Rahul Sharma
+```
+
+---
+
+## 9. Basic Salary Input
+
+**Lines:** 18–19
+
+**Code:**
+
+```java
+System.out.print("Enter basic salary: Rs. ");
+double basicSalary = scanner.nextDouble();
+```
+
+**What it does:**
+
+Reads the employee's basic salary.
+
+**Why required:**
+
+The basic salary is used to calculate HRA, DA, gross salary, and net salary.
+
+**Java concept:** Double input.
+
+**Details:**
+
+- `double`: Stores decimal salary values.
+- `nextDouble()`: Reads decimal keyboard input.
+
+**Example:**
+
+```text
+20000
+```
+
+---
+
+# Salary Calculations
+
+## 10. Calculate House Rent Allowance (HRA)
+
+**Lines:** 22
+
+**Code:**
+
+```java
+double houseRentAllowance = basicSalary * 20 / 100;
+```
+
+**What it does:**
+
+Calculates HRA as 20 percent of the basic salary.
+
+**Why required:**
+
+HRA is an additional salary component calculated from the employee's basic salary.
+
+**Java concept:** Arithmetic calculation.
+
+**Formula:**
+
+```text
+HRA = Basic Salary × 20 ÷ 100
+```
+
+**Example:**
+
+```text
+20000 × 20 ÷ 100 = 4000
+```
+
+**Result:**
+
+```text
+HRA = Rs. 4,000.00
+```
+
+---
+
+## 11. Calculate Dearness Allowance (DA)
+
+**Lines:** 23
+
+**Code:**
+
+```java
+double dearnessAllowance = basicSalary * 10 / 100;
+```
+
+**What it does:**
+
+Calculates DA as 10 percent of the basic salary.
+
+**Why required:**
+
+DA is an additional salary component calculated from the employee's basic salary.
+
+**Java concept:** Arithmetic calculation.
+
+**Formula:**
+
+```text
+DA = Basic Salary × 10 ÷ 100
+```
+
+**Example:**
+
+```text
+20000 × 10 ÷ 100 = 2000
+```
+
+**Result:**
+
+```text
+DA = Rs. 2,000.00
+```
+
+---
+
+## 12. Calculate Gross Salary
+
+**Lines:** 24–25
+
+**Code:**
+
+```java
+double grossSalary = basicSalary + houseRentAllowance + dearnessAllowance;
+```
+
+**What it does:**
+
+Calculates the employee's gross salary.
+
+**Why required:**
+
+Gross salary represents the total salary before professional tax is deducted.
+
+**Java concept:** Arithmetic addition.
+
+**Formula:**
+
+```text
+Gross Salary = Basic Salary + HRA + DA
+```
+
+**Example:**
+
+```text
+20000 + 4000 + 2000 = 26000
+```
+
+**Result:**
+
+```text
+Gross Salary = Rs. 26,000.00
+```
+
+---
+
+# Professional Tax Calculation
+
+## 13. Initialize Professional Tax
+
+**Lines:** 28
+
+**Code:**
+
+```java
+double professionalTax = 0.0;
+```
+
+**What it does:**
+
+Initializes the professional tax to zero.
+
+**Why required:**
+
+It provides the default tax value when no tax is deducted.
+
+**Java concept:** Variable initialization.
+
+**Explanation:**
+
+The variable starts at `0.0`.
+
+If the employee's gross salary meets the tax condition, its value is updated to `200.0`.
+
+Otherwise, it remains zero.
+
+---
+
+## 14. Check Professional Tax Condition
+
+**Lines:** 30–32
+
+**Code:**
+
+```java
+if (grossSalary > 20000) {
+    professionalTax = 200.0;
+}
+```
+
+**What it does:**
+
+Checks whether the gross salary is strictly above Rs. 20,000.
+
+**Why required:**
+
+A gross salary of exactly Rs. 20,000 or below must not have professional tax.
+
+**Java concept:** If statement and greater-than operator.
+
+**Details:**
+
+- `if`: Executes a block of code when a condition is true.
+- `>`: Means greater than.
+- `professionalTax = 200.0`: Assigns Rs. 200 tax when the condition is true.
+
+**Example:**
+
+```text
+Gross Salary = Rs. 26,000
+Professional Tax = Rs. 200
+```
+
+**Important boundary condition:**
+
+| Gross salary | Professional tax |
+|---|---:|
+| Rs. 19,000 | Rs. 0 |
+| Rs. 20,000 | Rs. 0 |
+| Rs. 20,001 | Rs. 200 |
+| Rs. 26,000 | Rs. 200 |
+
+The condition uses `>` instead of `>=`, meaning exactly Rs. 20,000 does not qualify for the tax deduction.
+
+---
+
+## 15. Calculate Net Salary
+
+**Lines:** 34
+
+**Code:**
+
+```java
+double netSalary = grossSalary - professionalTax;
+```
+
+**What it does:**
+
+Calculates the salary after professional tax.
+
+**Why required:**
+
+Net salary represents the amount the employee receives after professional tax is deducted.
+
+**Java concept:** Arithmetic subtraction.
+
+**Formula:**
+
+```text
+Net Salary = Gross Salary - Professional Tax
+```
+
+**Example:**
+
+```text
+26000 - 200 = 25800
+```
+
+**Result:**
+
+```text
+Net Salary = Rs. 25,800.00
+```
+
+---
+
+# Display Employee Salary Details
+
+## 16. Display Salary Heading
+
+**Lines:** 37
+
+**Code:**
+
+```java
+System.out.println("\n===== Employee Salary Details =====");
+```
+
+**What it does:**
+
+Displays a heading for the salary details.
+
+**Why required:**
+
+Separates and identifies the salary report in the console.
+
+**Java concept:** Console output.
+
+**Details:**
+
+- `println()`: Prints text and moves to a new line.
+- `\n`: Inserts a blank line before the heading.
+
+---
+
+## 17. Display Employee ID and Name
+
+**Lines:** 38–39
+
+**Code:**
+
+```java
+System.out.println("Employee ID: " + employeeId);
+System.out.println("Employee Name: " + employeeName);
+```
+
+**What it does:**
+
+Displays the employee ID and name.
+
+**Why required:**
+
+Identifies which employee the salary details belong to.
+
+**Java concept:** String concatenation.
+
+**Example:**
+
+```java
+"Employee ID: " + employeeId
+```
+
+**Result:**
+
+```text
+Employee ID: 101
+Employee Name: Rahul Sharma
+```
+
+---
+
+## 18. Display All Salary Components
+
+**Lines:** 40–45
+
+**Code:**
+
+```java
+System.out.printf("Basic Salary: Rs. %.2f%n", basicSalary);
+System.out.printf("HRA: Rs. %.2f%n", houseRentAllowance);
+System.out.printf("DA: Rs. %.2f%n", dearnessAllowance);
+System.out.printf("Gross Salary: Rs. %.2f%n", grossSalary);
+System.out.printf("Professional Tax: Rs. %.2f%n", professionalTax);
+System.out.printf("Net Salary: Rs. %.2f%n", netSalary);
+```
+
+**What it does:**
+
+Displays all salary amounts with exactly two decimal places.
+
+**Why required:**
+
+Makes the salary report easy to read and ensures consistent formatting of monetary values.
+
+**Java concept:** Formatted console output.
+
+**Details:**
+
+- `printf()`: Displays formatted output.
+- `%.2f`: Formats a decimal with exactly two digits after the decimal point.
+- `%n`: Starts a new line.
+- `Rs.`: Displays the currency label before each amount.
+
+**Example:**
+
+```text
+Basic Salary: Rs. 20000.00
+HRA: Rs. 4000.00
+DA: Rs. 2000.00
+Gross Salary: Rs. 26000.00
+Professional Tax: Rs. 200.00
+Net Salary: Rs. 25800.00
+```
+
+---
+
+## 19. Close Scanner
+
+**Lines:** 47
+
+**Code:**
+
+```java
+scanner.close();
+```
+
+**What it does:**
+
+Closes the Scanner after input is complete.
+
+**Why required:**
+
+Releases the input resource.
+
+**Java concept:** Resource management.
+
+---
+
+# Sample Input
+
+The following values demonstrate how the program works.
+
+| Input | Value |
+|---|---|
+| Employee ID | 101 |
+| Employee Name | Rahul Sharma |
+| Basic Salary | Rs. 20,000 |
+
+**Console input example:**
+
+```text
+Enter employee ID: 101
+Enter employee name: Rahul Sharma
+Enter basic salary: Rs. 20000
+```
+
+---
+
+# Expected Output
+
+Using the sample input above, the calculations are:
+
+### Step 1: Calculate HRA
+
+```text
+20000 × 20 ÷ 100 = 4000
+```
+
+### Step 2: Calculate DA
+
+```text
+20000 × 10 ÷ 100 = 2000
+```
+
+### Step 3: Calculate Gross Salary
+
+```text
+20000 + 4000 + 2000 = 26000
+```
+
+### Step 4: Calculate Professional Tax
+
+```text
+26000 > 20000
+
+Condition is TRUE.
+
+Professional Tax = Rs. 200
+```
+
+### Step 5: Calculate Net Salary
+
+```text
+26000 - 200 = 25800
+```
+
+### Final Console Output
+
+```text
+===== Employee Salary Details =====
+Employee ID: 101
+Employee Name: Rahul Sharma
+Basic Salary: Rs. 20000.00
+HRA: Rs. 4000.00
+DA: Rs. 2000.00
+Gross Salary: Rs. 26000.00
+Professional Tax: Rs. 200.00
+Net Salary: Rs. 25800.00
+```
+
+---
+
+# Complete Salary Calculation Summary
+
+| Salary component | Calculation | Amount |
+|---|---|---:|
+| Basic Salary | Given input | Rs. 20,000 |
+| HRA | 20% of basic salary | Rs. 4,000 |
+| DA | 10% of basic salary | Rs. 2,000 |
+| Gross Salary | Basic + HRA + DA | Rs. 26,000 |
+| Professional Tax | Gross salary > Rs. 20,000 | Rs. 200 |
+| Net Salary | Gross - Tax | Rs. 25,800 |
+
+---
+
+# Important Java Concepts Revision
+
+| Java concept | Where it appears |
+|---|---|
+| Package declaration | Line 1 |
+| Import statement | Line 3 |
+| Class declaration | Line 5 |
+| Main method | Line 7 |
+| Object creation | Line 8 |
+| Integer input | Lines 11–12 |
+| Scanner input handling | Line 13 |
+| String input | Lines 15–16 |
+| Double input | Lines 18–19 |
+| Arithmetic multiplication | Lines 22–23 |
+| Arithmetic addition | Lines 24–25 |
+| Variable initialization | Line 28 |
+| If statement | Lines 30–32 |
+| Greater-than operator | Line 30 |
+| Arithmetic subtraction | Line 34 |
+| Console output | Line 37 |
+| String concatenation | Lines 38–39 |
+| Formatted output | Lines 40–45 |
+| Resource management | Line 47 |
+
+---
+
+# Follow-up Question
+
+**What is the difference between `scanner.nextInt()` and `scanner.nextLine()`, and why is `nextLine()` called after `nextInt()`?**
+
+### Answer
+
+`scanner.nextInt()` reads an integer value but does not consume the newline character generated when the user presses Enter.
+
+`scanner.nextLine()` reads the complete remaining line, including spaces, and consumes the newline character.
+
+**Example:**
+
+```java
+int employeeId = scanner.nextInt();
+scanner.nextLine();
+
+String employeeName = scanner.nextLine();
+```
+
+The first `nextLine()` consumes the leftover newline after the employee ID.
+
+The second `nextLine()` reads the employee's actual name.
+
+**Without the extra `nextLine()`:**
+
+The program may skip the employee name input because the leftover newline is consumed immediately.
+
+**Remember:** When mixing `nextInt()` or `nextDouble()` with `nextLine()`, be aware of the leftover newline character.
+
