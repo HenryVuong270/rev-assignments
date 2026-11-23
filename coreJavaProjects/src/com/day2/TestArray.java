@@ -1,0 +1,50 @@
+package com.day2;
+
+public class TestArray {
+
+	public static void main(String[] args) {
+
+		/*int[] numbers = {1,2,3,4,5};
+		for(int num: numbers) {
+			System.out.println(num);
+		}
+		for(int i = 0; i < numbers.length; i ++) {
+			System.out.println(numbers[i]);
+		}*/
+		
+		int[][] matrix = {{1,2,3,}, {4,5,6}};
+		
+		for(int row = 0; row < 2; row++) {
+			for(int col = 0; col < 3; col ++) {
+				System.out.print(matrix[row][col] + " ");
+			}
+			System.out.print("\n");
+		}
+		
+		
+		int[][] matrix2 = {{1,2,3,}, {4,5,6}, {7,8,9}};
+		int oddCount = 0;
+		int evenCount = 0;
+		for(int row = 0; row < 3; row++) {
+			for(int col = 0; col < 3; col ++) {
+				if(row == col) {
+					System.out.println("diag " +  matrix2[row][col]);
+				}
+				if(matrix2[row][col] % 2 ==0) {
+					evenCount ++;
+				}
+				else {
+					oddCount ++;
+				}
+			}
+			
+		}
+		System.out.println("even count " + evenCount );
+		System.out.println("odd nums "+ oddCount);
+		
+		
+		
+		
+	}
+
+}
