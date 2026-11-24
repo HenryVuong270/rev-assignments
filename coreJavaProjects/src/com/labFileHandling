@@ -1,0 +1,77 @@
+package labfilehandling;
+
+import java.io.*;
+
+public class Employee implements Serializable{
+	
+	String empid;
+	String empName; 
+	String department;
+	double salary;
+	
+	
+	public Employee(String empid, String empName, String department, double salary) {
+		super();
+		this.empid = empid;
+		this.empName = empName;
+		this.department = department;
+		this.salary = salary;
+	}
+
+	
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return String.format(department + "\n" + empid + "\n" + empName + "\n"+ salary+ "\n");
+	}
+	
+	public static void main(String[] args) {
+	
+	Employee[] empArr = new Employee[5];
+
+	empArr[0] = new Employee("123", "Alice", "Hr", 10000);
+	empArr[1] = new Employee("124", "bob", "hr", 20000);
+	empArr[2] = new Employee("221", "Brian", "Engineering", 90000);
+	empArr[3] = new Employee("331", "sarah", "Engineering", 150000);
+	empArr[4] = new Employee("441", "dylan", "CEO", 250000);
+
+	try (FileOutputStream fos = new FileOutputStream("employees.dat");
+			ObjectOutputStream oos = new ObjectOutputStream(fos); 
+			){
+			
+		oos.writeObject(empArr);
+	}
+	
+	
+	catch (IOException e) {
+		e.printStackTrace();
+	}
+	
+	try (FileInputStream read = new FileInputStream("employees.dat"); 
+			ObjectInputStream readObj = new ObjectInputStream(read);){
+		
+		Employee[] loadEmployees = (Employee[]) readObj.readObject();
+		
+		for(Employee emp: loadEmployees) {
+			System.out.print(emp.toString());
+		}
+		
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (ClassNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	
+	}
+	
+	
+	
+
+}
